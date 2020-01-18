@@ -1,0 +1,7 @@
+{
+  "name": "cardzar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
