@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Scanner
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card>
+    <ion-img [src]="currentImage"></ion-img>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab-button (click)="presentModal()">
+    <ion-icon name="plus"></ion-icon>
+  </ion-fab-button>
+</ion-content>

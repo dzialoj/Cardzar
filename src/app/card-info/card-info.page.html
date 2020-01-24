@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+    </ion-buttons>
+    <ion-title>card-info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="image">
+    <ion-img [src]="cardimg"></ion-img>
+  </ion-card>
+  <ion-card class="description">
+    <ion-header>
+      <ion-card-title>{{cardId}}</ion-card-title>
+      <ion-card-subtitle>{{cardId}}</ion-card-subtitle>
+    </ion-header>
+    <ion-card-content>
+      Mock description describing the card at this current index. Either a user description or something taken
+      from the object itself, not sure yet :^)
+    </ion-card-content>
+  </ion-card>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="primary">
+      <ion-icon name="arrow-dropleft"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button color="primary">
+        <ion-icon name="star"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="primary">
+        <ion-icon name="cart"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="primary">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="primary">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

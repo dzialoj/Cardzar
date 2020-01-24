@@ -24,6 +24,11 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+          },
+          {
+            path: 'info/:id',
+            loadChildren: () =>
+              import('../card-info/card-info.module').then(m => m.CardInfoPageModule)
           }
         ]
       },
