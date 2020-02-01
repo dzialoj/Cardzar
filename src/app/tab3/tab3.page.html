@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Scanner
     </ion-title>
@@ -10,12 +10,18 @@
   <ion-card>
     <ion-img [src]="currentImage"></ion-img>
   </ion-card>
-  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-    <ion-fab-button (click)="takePicture()">
-      <ion-icon name="camera"></ion-icon>
-    </ion-fab-button>
+  <ion-fab vertical="bottom" slot="fixed">
+    <ion-row>
+      <ion-col>
+        <ion-fab-button (click)="takePicture()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+      <ion-col>
+        <ion-fab-button (click)="presentModal()">
+          <ion-icon name="code"></ion-icon>
+        </ion-fab-button>
+      </ion-col>
+    </ion-row>
   </ion-fab>
-  <ion-fab-button (click)="presentModal()">
-    <ion-icon name="plus"></ion-icon>
-  </ion-fab-button>
 </ion-content>

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CardInfoPageRoutingModule } from './card-info-routing.module';
 
 import { CardInfoPage } from './card-info.page';
+import { PriceHistoryGraphComponent } from '../price-history-graph/price-history-graph.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { CardInfoPage } from './card-info.page';
     CardInfoPageRoutingModule
   ],
   exports: [CardInfoPage],
-  declarations: [CardInfoPage]
+  declarations: [CardInfoPage,PriceHistoryGraphComponent]
 })
 export class CardInfoPageModule {}

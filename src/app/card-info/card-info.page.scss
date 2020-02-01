@@ -1,6 +1,14 @@
 .description{
     height: 50%;
+    padding: 10px;
 }
 .image{
     height: 30%;
+}
+ion-header{
+    padding: 10px;
+}
+
+ion-card-content > ion-label {
+    float: left;
 }

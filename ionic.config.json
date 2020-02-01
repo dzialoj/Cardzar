@@ -4,5 +4,9 @@
     "capacitor": {},
     "cordova": {}
   },
+  "proxies": [{
+    "path": "/posts/",
+    "proxyUrl": "http://localhost:8000/posts"
+  }],
   "type": "angular"
 }

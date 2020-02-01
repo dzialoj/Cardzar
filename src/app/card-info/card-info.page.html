@@ -1,26 +1,43 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
     </ion-buttons>
-    <ion-title>card-info</ion-title>
+    <ion-title *ngIf="post">Details: {{ post.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="post">
   <ion-card class="image">
-    <ion-img [src]="cardimg"></ion-img>
+    <ion-img [src]="post.imageUrl"></ion-img>
   </ion-card>
   <ion-card class="description">
     <ion-header>
-      <ion-card-title>{{cardId}}</ion-card-title>
-      <ion-card-subtitle>{{cardId}}</ion-card-subtitle>
+      <ion-label>
+        <ion-card-title>{{post.name}}</ion-card-title>
+        <ion-card-subtitle>${{post.price}}</ion-card-subtitle>
+        <ion-card-subtitle>{{post.condition}}/10</ion-card-subtitle>
+      </ion-label>
     </ion-header>
-    <ion-card-content>
-      Mock description describing the card at this current index. Either a user description or something taken
-      from the object itself, not sure yet :^)
+    <ion-card-content [ngSwitch]="switchCase">
+      <ion-label *ngSwitchCase="'details'">
+        <p>{{post.description}}</p>
+        <p>Set: Example Set Name</p>
+        <p>{{post.created}}</p>
+      </ion-label>
+      <ion-label *ngSwitchCase="'data'">
+        <app-price-history-graph></app-price-history-graph>
+      </ion-label>
     </ion-card-content>
   </ion-card>
+  <ion-segment color="primary" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="details">
+        <ion-icon name="information-circle"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="data">
+        <ion-icon name="analytics"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
   <ion-fab horizontal="end" vertical="bottom" slot="fixed">
     <ion-fab-button color="primary">
       <ion-icon name="arrow-dropleft"></ion-icon>
